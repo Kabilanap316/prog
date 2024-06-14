@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+
+		content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body style="text-align: center;">
+	<h1 style="color: green">Word Counter </h1>
+	<H3>Description:</H3>
+	
+
+	<p style="color: rgb(116, 18, 208);">
+		Type in the textbox to
+		automatically count the words
+	</p>
+
+	<textarea id="word" oninput="countWord()"
+			rows="10" cols="60">
+	</textarea>
+	<br><br>
+
+	<p style="color: brown;"> Word Count:
+		<span id="show">0</span>
+	</p>
+
+	<script>
+		function countWord() {
+
+			// Get the input text value
+			let words = document
+				.getElementById("word").value;
+
+			// Initialize the word counter
+			let count = 0;
+
+			// Split the words on each
+			// space character 
+			let split = words.split(' ');
+
+			// Loop through the words and 
+			// increase the counter when 
+			// each split word is not empty
+			for (let i = 0; i < split.length; i++) {
+				if (split[i] != "") {
+					count += 1;
+				}
+			}
+
+			// Display it as output
+			document.getElementById("show")
+				.innerHTML = count;
+		}
+	</script>
+</body>
+
+</html>
